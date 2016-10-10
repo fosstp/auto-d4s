@@ -20,7 +20,7 @@ fosstp 臺北市自由軟體推動小組 — 自動安裝校園網站 Drupal 指
 
 請使用系統管理員 root 權限，執行底下指令
 ```bash
-wget -O auto-drupal.sh https://raw.githubusercontent.com/liao-chianan/auto-drupal/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
+wget -O auto-drupal.sh https://raw.githubusercontent.com/fosstp/auto-d4s/auto-drupal/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
 ```
 
 ------------------------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ wget -O auto-drupal.sh https://raw.githubusercontent.com/liao-chianan/auto-drupa
 請使用系統管理員 root 權限，執行底下指令
 
 ```bash
-yum -y install wget;wget -O auto-drupal.sh https://raw.githubusercontent.com/liao-chianan/auto-drupal/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
+yum -y install wget;wget -O auto-drupal.sh https://raw.githubusercontent.com/fosstp/auto-d4s/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
 ```
 
 ### Qnap / Synology 系統 (終止開發)
@@ -43,5 +43,5 @@ yum -y install wget;wget -O auto-drupal.sh https://raw.githubusercontent.com/lia
 3. 執行底下指令
 
 ```shell
-curl -kO https://raw.githubusercontent.com/liao-chianan/auto-drupal/master/autodrupal-qnap-synology.sh ;chmod +x autodrupal-qnap-synology.sh;./autodrupal-qnap-synology.sh
+curl -kO https://raw.githubusercontent.com/fosstp/auto-d4s/master/autodrupal-qnap-synology.sh ;chmod +x autodrupal-qnap-synology.sh;./autodrupal-qnap-synology.sh
 ```
