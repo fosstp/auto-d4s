@@ -1,4 +1,4 @@
-# auto-drupal
+# auto-d4s
 
 fosstp 臺北市自由軟體推動小組 — 自動安裝校園網站 Drupal 指令集
 
