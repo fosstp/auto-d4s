@@ -1,14 +1,13 @@
-#!/bin/bash
-printf "\e[0;32;40m"
+printf "\E[0;32;40m"
 echo -e "臺北市自由軟體推動小組fosstp--自動化Drupal校園網站自動安裝程序\n"
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
 
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo -e "請先進行參數設定\n"
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
-printf "\e[0;33;40m"
+printf "\E[0;33;40m"
 read -p "請輸入您要使用的mysql root密碼(Please enter your mysql root password): " mysql_pw
 
 read -p "您是否要安裝phpmyadmin(Do you want to install phpmyadmin) Y/N: " pma_yn
@@ -16,7 +15,7 @@ read -p "您是否要安裝phpmyadmin(Do you want to install phpmyadmin) Y/N: " 
 read -p "請輸入您要使用的drupal站台名稱(Please enter your drupal site-name): "  drupal_sitename
 
 read -p "請輸入您要使用的drupal管理員密碼(Please enter your drupal admin password): "  drupal_admin_pw
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
 echo -e "偵測系統版本....."
 
@@ -32,9 +31,9 @@ elif [ -f /etc/redhat-release ]; then
 else
     DISTRO=$(uname -s)
 fi
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo -e "系統版本為:" $DISTRO " 開始進行docker安裝"
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
 
 case ${DISTRO} in
@@ -56,9 +55,9 @@ case ${DISTRO} in
 esac
 
 
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo  -n "開始進行mysql docker部署動作...."
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
 
 docker run --restart=always  --name mysql -e MYSQL_ROOT_PASSWORD=$mysql_pw -e MYSQL_DATABASE=drupal  -d mysql/mysql-server
@@ -86,34 +85,34 @@ printf "Complete\n"
 
 
 if [ "${pma_yn}" == "Y" ] || [ "${pma_yn}" == "y" ]; then
-	printf "\e[0;35;40m"
+	printf "\E[0;35;40m"
 	echo -n "開始進行phpmyadmin docker部署動作...."
-	printf "\e[0m"
+	printf "\E[0m"
 	docker run --restart=always --name phpmyadmin --link mysql:db -p 8080:80 -d phpmyadmin/phpmyadmin
 	echo " ========================================================完成"
-	pmaurl=$(hostname -I | awk '{ print "http://"$1":8080/"}')
+	pmaurl= $(hostname -I | awk '{ print "http://"$1":8080/"}')
 	
 fi
 
 
 
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo -n "開始進行drupal docker部署動作...."
-printf "\e[0m"
+printf "\E[0m"
 docker run --restart=always  --name drupal --link mysql:db -p 80:80 -p 443:443 -d fosstp/drupal
 echo " ========================================================完成"
 
 
 
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo -n "開始進行 drupal 站台自動化安裝作業...."
-printf "\e[0m"
+printf "\E[0m"
 docker exec  drupal drush -y  site-install standard --clean-url=0 --site-name=$drupal_sitename --account-pass=$drupal_admin_pw --db-url=mysql://root:${mysql_pw}@db/drupal
 echo " ========================================================完成"
 
-printf "\e[0;35;40m"
+printf "\E[0;35;40m"
 echo -n "開始進行 drupal 中文化介面與校務模組安裝..."
-printf "\e[0m"
+printf "\E[0m"
 echo " ========================================================"
 
 docker exec  drupal cp /etc/php5/cli/php.ini  /usr/local/etc/php/
@@ -132,7 +131,7 @@ docker exec  drupal chown -R www-data:www-data /var/www/html/sites/default
 docker exec  drupal chmod -R 755 /var/www/html/sites/default/files
 docker restart drupal
 echo " ========================================================"
-printf "\e[0;32;40m"
+printf "\E[0;32;40m"
 echo -e "安裝結束 您可以使用下列網址測試drupal是否安裝成功 系統管理員帳號為 admin 密碼為"  $drupal_admin_pw "\n"
 hostname -I | awk '{ print "http://"$1"/"}'
 
@@ -141,4 +140,4 @@ if [ "${pma_yn}" == "Y" ] || [ "${pma_yn}" == "y" ]; then
         hostname -I | awk '{ print "http://"$1":8080/"}'
 fi
 
-printf "\e[0m"
+printf "\E[0m"
