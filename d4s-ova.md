@@ -1,16 +1,16 @@
 # Drupal4School Ova 虛擬機樣板使用說明：
 
-版本：20160926
+版本：20161013
 
-下載地址：https://drive.google.com/file/d/0ByMcx4nZLJ48aVJrSTlWUXdpMzg
+下載地址：https://drive.google.com/file/d/0ByMcx4nZLJ48b1JaQ0hIZUlTR1k/view
 
-檔名與大小：D4S20160926.ova (1955634688 bytes)
+檔名與大小：D4S20161013.ova (1,596,551,680 bytes)
 
-## 檔案驗證碼
+## OVA檔案驗證碼
 
-md5：95bd7b5566c83d8a9c2e9ab85b5c1d60
+md5：0f55ec5696f4598b9a495eb05bf2b553
 
-sha1：b82f5d51c371adff3e3a048ae801374fd52ae4eb
+sha1：93b767f880ffff55cfd84ec5b0c7054e679e7612
 
 ## Ova樣板模擬硬體
 
@@ -20,37 +20,31 @@ RAM：2048MB
 
 HDD：320GB SATA
 
-Network：Virt-IO net (預設使用dhcp)
+Network：Intel Pro/1000 MT Desktop (預設使用dhcp)
 
 ## Ova樣板使用軟體
 
-OS版本：Debian8.5 最小安裝含ssh server
+OS版本：Debian8.6 最小安裝含ssh server
 
-Docker版本：version 1.12.1, build 23cf638
+Docker版本：version 1.12.2, build bb80604
 
-Drupal4School image版本：
+Drupal4School image版本：2016-10-06T23:28:35.500963753Z 
 
-2016-09-26T01:08:43.615192221Z sha256:7e2c26a5c6de1b6b55867c1dffa5628f100fd7317a77658d716bb381fa6cfc28
+Mysql image版本：2016-10-13T12:49:26.931612156Z 
 
-Mysql image版本：
-
-2016-09-15T12:37:59.265041313Z sha256:45fefdaadb8c4f8c4743998eb45e9fec2a935070b219c5339e48ee08207c4ee6
-
-PhpMyadmin image版本：
-
-2016-09-23T18:54:58.798084218Z sha256:fe8c9a43e85ba407ede642f3fb4f44984671d9db9c6583e1c86e525f97b85962
+PhpMyadmin image版本：2016-10-04T14:20:15.079518663Z
 
 ## Ova樣板相關帳號密碼
 
-OS 管理員：root/12345678
+OS 管理員：root/123456
 
-OS SSH遠端登入帳號(提供su權限)：d4s/12345678
+OS SSH遠端登入帳號(提供su權限)：d4s/123456
 
-Drupal系統管理員:admin/12345678
+Drupal系統管理員:admin/123456
 
-PhpMyadmin 管理員:root/12345678
+PhpMyadmin 管理員:root/123456
 
-Mysql 管理員:root/12345678
+Mysql 管理員:root/123456
 
 
 
