@@ -29,7 +29,7 @@ wget -O auto-drupal.sh https://raw.githubusercontent.com/fosstp/auto-d4s/master/
 請使用系統管理員 root 權限，執行底下指令
 
 ```bash
-yum -y install wget;wget -O auto-drupal.sh https://raw.githubusercontent.com/fosstp/auto-d4s/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
+yum -y install wget nc;wget -O auto-drupal.sh https://raw.githubusercontent.com/fosstp/auto-d4s/master/auto-drupal.sh;chmod +x auto-drupal.sh;./auto-drupal.sh
 ```
 
 ### Qnap / Synology 系統 (終止開發)
